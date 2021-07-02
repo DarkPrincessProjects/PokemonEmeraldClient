@@ -15,6 +15,8 @@
 #include "constants/items.h"
 #include "constants/hold_effects.h"
 
+void ItemId_GetHoldEffectParam_Script();
+
 extern u16 gUnknown_0203CF30[];
 
 // this file's functions
@@ -946,4 +948,9 @@ ItemUseFunc ItemId_GetBattleFunc(u16 itemId)
 u8 ItemId_GetSecondaryId(u16 itemId)
 {
     return gItems[SanitizeItemId(itemId)].secondaryId;
+}
+
+void ItemId_GetHoldEffectParam_Script()
+{
+    VarSet(VAR_RESULT, ItemId_GetHoldEffectParam(VarGet(VAR_0x8004)));
 }
